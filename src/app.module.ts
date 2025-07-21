@@ -3,6 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RolesModule } from './roles/roles.module';
+import { PermissionsModule } from './permissions/permissions.module';
+import { DocumentsModule } from './documents/documents.module';
+import { RolesPermissionsModule } from './roles_permissions/roles_permissions.module';
+import { UsersRolesModule } from './users_roles/users_roles.module';
 
 @Module({
   imports: [
@@ -17,6 +22,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       migrations: ['dist/migrations/*.js'],
     }),
     UsersModule,
+    RolesModule,
+    PermissionsModule,
+    DocumentsModule,
+    RolesPermissionsModule,
+    UsersRolesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
