@@ -6,10 +6,13 @@ import {
   Param,
   Delete,
   Put,
+  Query,
+  ValidationPipe,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+// import { UpdateUserDto } from './dto/update-user.dto';
+import { PaginationQueryParam } from 'src/common/dto/pagination-query-param.dto';
 
 @Controller('users')
 export class UsersController {
@@ -21,8 +24,11 @@ export class UsersController {
   }
 
   @Get()
-  findAll() {
-    return this.usersService.findAll();
+  findAll(
+    @Query(new ValidationPipe({ transform: true }))
+    query: PaginationQueryParam,
+  ) {
+    return this.usersService.findAll(query);
   }
 
   @Get(':id')

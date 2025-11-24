@@ -22,6 +22,9 @@ export class User {
   username: string;
 
   @Column('varchar')
+  password: string;
+
+  @Column('varchar')
   email: string;
 
   @Column('int')
@@ -35,6 +38,9 @@ export class User {
 
   @Column('varchar', { nullable: true })
   deleted_by: string;
+
+  @Column('date', { nullable: true })
+  birth_date: Date;
 
   @CreateDateColumn()
   created_at: number;
