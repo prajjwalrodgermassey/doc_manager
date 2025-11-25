@@ -4,7 +4,6 @@ pipeline {
             image 'alpine:3.21'
         }
     }
-
     // tools {
     //     nodejs "node 22"
     // }
