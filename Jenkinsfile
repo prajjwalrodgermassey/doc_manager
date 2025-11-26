@@ -9,7 +9,10 @@ pipeline {
     stages {
         stage('build'){
             steps{
-               script {dockerImage = docker.buld("myapp:latest")}
+            // NOT USED AS NEEDS APPROVAL
+            //    script {dockerImage = docker.buld("myapp:latest")}
+            // USE THIS INSTEAD
+            sh """ docker build -t my-app:latest """
             }
         }
     }
