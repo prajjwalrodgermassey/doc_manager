@@ -1,6 +1,10 @@
 FROM node:22-alpine
 
-RUN npm i
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm ci
 RUN npm run build
 
 CMD ['npm', 'run', 'start']
