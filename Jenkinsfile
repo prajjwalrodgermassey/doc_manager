@@ -1,4 +1,5 @@
 pipeline {
+    // added docker cli in jenkins container and added docker.sock in the jenkins container
     agent {
         docker {
             image 'alpine:3.21'
