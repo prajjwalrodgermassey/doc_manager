@@ -12,7 +12,7 @@ pipeline {
             // NOT USED AS NEEDS APPROVAL
             //    script {dockerImage = docker.buld("myapp:latest")}
             // USE THIS INSTEAD
-            sh """ docker build -t my-app:latest """
+            sh """ docker build -t my-app:latest ."""
             }
         }
     }
