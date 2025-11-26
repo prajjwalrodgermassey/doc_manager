@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm ci
+RUN npm cache clean --force && npm i
 RUN npm run build
 
 CMD ['npm', 'run', 'start']
